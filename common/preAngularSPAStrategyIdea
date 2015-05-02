@@ -1,0 +1,23 @@
+<button id="nav">load</button>
+<div id="page" value="http://www.codecademy.com/"></div>
+
+<script>
+document.getElementById('nav').onclick = function(){
+var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange=function()
+  {
+  if (xhr.readyState==4)
+    {
+        document.getElementById("page").innerHTML = xhr.response;
+		
+    }
+  }
+xhr.open("GET", document.getElementById("page").getAttribute("value"), false);
+
+xhr.send();
+
+    
+    
+}
+</script>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<style>
+<!-- Additional  style declarations -->
+</style>
+</head>
+<body>
+		<div class="container">
+				<div id="envelopes">
+<table class="table table-bordered table-striped table-hover">
+                <caption style="text-align:center"> <h3>ENVELOPES</h3> </caption>
+                <thead>
+                <tr>
+                    <th>CATEGORY</th>
+                    <th>AMOUNT</th>
+                    <th>SPENT</th>
+                    <th>BALANCE</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </tr>
+                </thead>
+                <tbody><tr>
+				<td class="category">Groceries</td>
+				<td class="amount">300</td>
+				<td>120.25</td>
+				<td>179.75</td>
+				<td class="edit">
+					<a href="javascript:void(0);" class="glyphicon glyphicon-pencil"></a>
+					<input hidden type="radio" name="select"></input>
+				</td>
+				<td class="delete">
+					<a href="javascript:void(0);" class="glyphicon glyphicon-trash"></a>
+				</td>
+				</tr>
+				<tr>
+				<td class="category">Groceries</td>
+				<td class="amount">300</td>
+				<td>120.25</td>
+				<td>179.75</td>
+				<td class="edit">
+					<a href="javascript:void(0);" class="glyphicon glyphicon-pencil"></a>
+					<input hidden type="radio" name="select"></input>
+				</td>
+				<td class="delete">
+					<a href="javascript:void(0);" class="glyphicon glyphicon-trash"></a>
+				</td>
+				</tr>
+				<tr>
+				<td class="category">Test</td>
+				<td class="amount">450</td>
+				<td>120.25</td>
+				<td>179.75</td>
+				<td class="edit">
+					<a href="javascript:void(0);" class="glyphicon glyphicon-pencil"></a>
+					<input hidden type="radio" name="select"></input>
+				</td>
+				<td class="delete">
+					<a href="javascript:void(0);" class="glyphicon glyphicon-trash"></a>
+				</td>
+				</tr>
+			</tbody>
+            </table>
+			</div>
+			</div>
+
+	<!-- Modal For Edit Category-->
+    <div class="modal fade" id="checkInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Category</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Category :</label>
+                            <input type="text" class="form-control" id="editCategory" readonly>
+                        </div>
+                        <div class="col-md-12">
+                            <label>Amount ($) :</label>
+                            <input type="text" class="form-control" id="editAmount">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-save">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	
+    $('.edit').click(function(){
+            var that = this;
+            $(this).find(':radio').prop("checked",true);
+            loadData(that);
+            $('#checkInModal').modal({                 
+            });
+    });
+    
+    function loadData(that){
+        $('#editCategory').val($(that).parent().find('.category').html());
+        $('#editAmount').val($(that).parent().find('.amount').html());
+    }
+    
+    $('.btn-save').click(function(){
+        // Update the new values inside the Table
+        var row = $('input[name=select]:checked').parent().parent();        
+        $(row).find('.category').html( $('#editCategory').val());
+        $(row).find('.amount').html( $('#editAmount').val());
+        $('#checkInModal').modal('hide');
+        
+        //Create an object with the saved values and post it to server
+        
+        
+    });
+});
+
+$(document).ready(function(){
+
+    $('.popup').popover();
+
+    $('.popup').on('click', function (e) {
+        $('.popup').not(this).popover('hide');
+    });
+});
+
+$('a[rel=popover]').popover({
+    html: 'true',
+    placement: 'right'
+})
+
+$('a[rel=popover1]').popover({
+    html: 'true',
+    placement: 'left'
+})
+</script>
+</body>
+</html>

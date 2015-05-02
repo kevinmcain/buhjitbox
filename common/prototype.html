@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style>
+table.menu, th, td.menu {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+td.envelopes {
+    width:200px;
+    height:100px;
+    background-image: url(images/envelope.svg);
+    background-repeat:no-repeat;
+	background-size:200px 100px;
+	text-align: center;
+	vertical-align: middle;
+	padding-bottom:0px;
+	cursor: pointer; 
+	cursor: hand;
+}
+td.envelopes:hover{
+  opacity: 0.4;
+}
+.box {
+    height:100px;
+    width:200px;
+	background-image: url(images/envelope2.svg);
+    display: inline-block;
+	/*border: 2px solid black;*/
+    border-collapse: collapse;
+	/*margin: 1em;*/
+	cursor: pointer; 
+	cursor: hand;
+}
+.budgetBox {
+    height:100px;
+    width:200px;
+    display: inline-block;
+	border: 2px solid black;
+    border-collapse: collapse;
+	/*margin: 1em;*/
+	cursor: pointer; 
+	cursor: hand;
+}
+h4{
+  text-align: left;
+  padding-left:20px;
+  padding-top:20px;
+}
+h4.boxHead{
+  text-align: left;
+  padding-left:3px;
+  padding-top:0px;
+}
+.badge {
+  /*padding: 1px 9px 2px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #999999;*/
+
+}
+span {
+	/*float: left;*/
+	/*margin-top:10px;
+	margin-left:35px;*/
+	
+	/* works for use with badge
+	margin-top:5%;
+	margin-left:41%;*/
+}
+p.balance {
+	/*display:-moz-inline-sblock;*/
+	text-align:center;
+	padding-top:10px;
+}
+span {
+	/*display:block*/
+	/*margin-top:20px;*/
+  margin-top:30px;
+  margin-right:3px;
+  float: right;
+} 
+div:hover{
+  opacity: 0.4;
+}
+#red {
+    background-color:#FF0000;
+}
+
+#blue {
+    background-color:#0000FF;
+}
+
+#yellow {
+    background-color:#E2BE22;
+}
+
+#green {
+    background-color:#008800;
+}
+</style>
+<head>
+<body link="blue">
+<center> <h1> Envelope System </h1> </center>
+<table class="menu" style="width:100%">
+<tr>
+<th> <a href=index.html> HOME </a> </th>
+<th> <a href=manageEnvelopes.html> MANAGE ENVELOPES </a>  </th>
+<th> <a href=index.html> REPORTS </a> </th>
+<th> <a href=index.html> TRANSACTIONS </a> </th>
+<th> <a href=index.html> LOGOUT? </a> </th>
+</tr>
+</table>
+<br><br><br>
+
+<div class="budgetBox"><h4 class="boxHead">Groceries</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Gas</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Entertainment</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Entertainment</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Blow</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Life Insurance</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Savings</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Beauty & Cosmetics</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Vacation</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Gardener</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Home Loan</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Car Loan</h4><span class="badge">20000</span></div>
+<div class="budgetBox"><h4 class="boxHead">Credit Card</h4><span class="badge">20000</span></div>
+
+<div class="box"><p class="balance">30000</p><h4>Groceries</h4></div>
+<div class="box"><p class="balance">20000</p><h4>Gas</h4></div>
+<div class="box"><p class="balance">100</p><h4>Entertainment</h4></div>
+<div class="box"><p class="balance">30000</p><h4>Entertainment</h4></div>
+<div class="box"><p class="balance">20000</p><h4>Blow</h4></div>
+<div class="box"><p class="balance">100</p><h4>Life Insurance</h4></div>
+<div class="box"><p class="balance">30000</p><h4>Savings</h4></div>
+<div class="box"><p class="balance">20000</p><h4>Beauty & Cosmetics</h4></div>
+<div class="box"><p class="balance">100</p><h4>Vacation</h4></div>
+<div class="box"><p class="balance">30000</p><h4>Gardener</h4></div>
+<div class="box"><p class="balance">20000</p><h4>Home Loan</h4></div>
+<div class="box"><p class="balance">100</p><h4>Car Loan</h4></div>
+<div class="box"><p class="balance">100</p><h4>Credit Card</h4></div>
+
+<!-- <div class="box"><span class="badge">1</span><h4>Groceries</h4></div>
+<div class="box"><span class="badge">20000</span><h4>Gas</h4></div>
+<div class="box"><span class="badge">100</span><h4>Entertainment</h4></div> -->
+
+<!-- <div class="box"><br><p>Groceries</p></div>
+<div class="box"><h3>Gas</h3><span class="badge">300</span></div>
+<div class="box"><br><p>Entertainment</p></div>
+<div class="box"><br><p>Blow</p></div>
+<div class="box"><br><p>Life Insurance</p></div>
+<div class="box"><br><p>Savings</p></div>
+<div class="box"><br><p>Beauty & Cosmetics</p></div>
+<div class="box"><br><p>Vacation</p></div>
+<div class="box"><br><p>Gardener</p></div>
+<div class="box"><br><p>Home Loan</p></div>
+<div class="box"><br><p>Car Loan</p></div>
+<div class="box"><br><p>Credit Card</p></div> -->
+
+<center>
+
+<!-- <div id="blue"><br><p>I'm an inline block!</p></div>
+<div id="yellow"><br><p>I'm an inline block!</p></div>
+<div id="green"><br><p>I'm an inline block!</p></div>
+<div id="red"><br><p>I'm an inline block!</p></div>
+<div id="blue"><br><p>I'm an inline block!</p></div>
+<div id="yellow"><br><p>I'm an inline block!</p></div>
+<div id="green"><br><p>I'm an inline block!</p></div>
+<div id="red"><br><p>I'm an inline block!</p></div>
+<div id="blue"><br><p>I'm an inline block!</p></div>
+<div id="yellow"><br><p>I'm an inline block!</p></div>
+<div id="green"><br><p>I'm an inline block!</p></div> -->
+
+
+<!-- <table align = “center”>
+	<tr>
+		<td class="envelopes">Groceries</td>
+		<td class="envelopes">Gas</td>
+		<td class="envelopes">Entertainment</td>
+	</tr>
+	<tr>
+		<td class="envelopes">Blow</td>
+		<td class="envelopes">Life Insurance</td>
+		<td class="envelopes">Savings</td>
+	</tr>
+		<tr>
+		<td class="envelopes">Beauty & Cosmetics</td>
+		<td class="envelopes">Vacation</td>
+		<td class="envelopes">Gardener</td>
+	</tr>
+		<tr>
+		<td class="envelopes">Home Loan</td>
+		<td class="envelopes">Car Loan</td>
+		<td class="envelopes">Credit Card</td>
+	</tr>
+</table> -->
+</center>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style>
+table.menu, th, td.menu {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+.box {
+    height:100px;
+    width:200px;
+	background-image: url(images/envelope2.svg);
+    display: inline-block;
+    border-collapse: collapse;
+	cursor: pointer; 
+	cursor: hand;
+}
+.box:hover
+{
+opacity: 0.4;
+}
+h4{
+  text-align: left;
+  padding-left:20px;
+  padding-top:20px;
+}
+p.balance {
+	text-align:center;
+	padding-top:10px;
+}
+</style>
+<head>
+<body onload="initXHR('main')">
+    <div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="color: #00E600">ıllıllı вυ∂gу ıllıllı</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#" onclick="homePage();><span class="glyphicon glyphicon-home" style="color: #00E600"></span> HOME</a></li>
+                        <li><a href=manageEnvelopes.html><span class="glyphicon glyphicon-envelope" style="color: #00E600"></span> ENVELOPES</a></li>
+                        <li><a href="#" onclick="manageTransactions()"><span class="glyphicon glyphicon-credit-card" style="color: #00E600"></span> TRANSACTIONS</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-stats" style="color: #00E600"></span> REPORTS</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-question-sign" style="color: #00E600"></span> HELP</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user" style="color: #00E600"></span> Sign Up</a></li>
+                        <li><a href="#" onclick="homelogout()"><span class="glyphicon glyphicon-log-in" style="color: #00E600"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<br><br><br>
+<center>
+<div id="main">
+	<!-- Users Budget/ Envelopes Populated by XHR-->
+</div>
+</center>
+		<script src="script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

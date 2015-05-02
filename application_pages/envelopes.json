@@ -1,0 +1,122 @@
+[ 
+	{
+		"bid": "1",
+		"cid": "1",
+		"category": "Groceries",
+		"amount": "300",
+		"spent": "120.25",
+		"balance": "179.75"
+	},
+	{
+		"bid": "1",
+		"cid": "2",
+		"category": "Education",
+		"amount": "225",
+		"spent": "75",
+		"balance": "150"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Entertainment",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	},
+	{
+		"bid": "1",
+		"cid": "1",
+		"category": "Gifts/Donations",
+		"amount": "300",
+		"spent": "120.25",
+		"balance": "179.75"
+	},
+	{
+		"bid": "1",
+		"cid": "2",
+		"category": "Healthcare/Medical",
+		"amount": "225",
+		"spent": "75",
+		"balance": "150"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Shopping",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	},
+	{
+		"bid": "1",
+		"cid": "1",
+		"category": "Savings",
+		"amount": "300",
+		"spent": "120.25",
+		"balance": "179.75"
+	},
+	{
+		"bid": "1",
+		"cid": "2",
+		"category": "Insurance",
+		"amount": "225",
+		"spent": "75",
+		"balance": "150"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Income",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	},
+	{
+		"bid": "1",
+		"cid": "1",
+		"category": "Personal Care",
+		"amount": "300",
+		"spent": "120.25",
+		"balance": "179.75"
+	},
+	{
+		"bid": "1",
+		"cid": "2",
+		"category": "Housing",
+		"amount": "225",
+		"spent": "75",
+		"balance": "150"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Taxes",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Travel",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Children/Dependent",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	},
+	{
+		"bid": "1",
+		"cid": "3",
+		"category": "Leisure",
+		"amount": "325",
+		"spent": "0",
+		"balance": "0"
+	}
+]
