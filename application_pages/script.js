@@ -1,14 +1,18 @@
 function initXHR(x) {
-	console.log(x); 
+	
+	console.log(x);
+	
 	if (x == 'envelopes') {
 	
 		retrieveJsonFileFromServer
-			('envelopes.json', populateTable);
+			('envelopes/1', populateTable);
+			//('envelopes.json', populateTable);
 	}
 	else if (x == 'main')
 	{
 		retrieveJsonFileFromServer
-			('envelopes.json', populateMain);
+			('envelopes/1', populateMain);
+			//('envelopes.json', populateMain);
 	}
 }
 
