@@ -24,7 +24,7 @@ $(document).ready(function(){
         
         	document.getElementById('myModalLabel').innerHTML = "Add Category";
             
-        	var row = document.getElementById('envelopesTable').insertRow();
+        	var row = document.getElementById('envelopesTable').insertRow(1);
             
             row.innerHTML = "<tr><td class=\"category\"></td>"
                             + "<td class=\"amount\"></td>"
