@@ -6,7 +6,8 @@ var db = mongoose.connection;
 //serve static images for the app from the 'images' directory
 app.use('/images', express.static(__dirname + '/images'));
 //serve static images for the app from the 'application_pages' directory in the app dir
-app.use(express.static(__dirname + '/application_pages/'));
+//app.use(express.static(__dirname + '/application_pages/'));
+app.use(express.static(__dirname + '/'));
 
 if('development' == app.get('env')) {
 	
@@ -46,4 +47,4 @@ app.get('/envelopes/:budgetId', function (req, res) {
 	
 });
 
-app.listen(80);
+app.listen(8080);
