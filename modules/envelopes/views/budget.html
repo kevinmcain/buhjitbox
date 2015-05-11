@@ -1,9 +1,9 @@
 <div class="container" ng-controller='EnvelopesCtrl' ng-init='getEnvelopes()'>
 	<h3 class="panel-heading">Budget</h3>
-	<div class="box" ng-repeat="result in results">
-		<p class="balance">{{result.balance}}</p>
+	<div class="box" ng-repeat="envelope in envelopes">
+		<p class="balance">{{envelope.balance}}</p>
 		<h4>
-			<a href="#/lists/{{result.categoryId}}">{{result.category}}</a>
+			<a href="#/lists/{{envelope.categoryId}}">{{envelope.category}}</a>
 		</h4>
 	</div>
 </div>
