@@ -1,0 +1,8 @@
+<div class="container" ng-controller='EnvelopesCtrl' ng-init='getEnvelopes()'>
+	<div class="box" ng-repeat="envelope in envelopes">
+		<p class="balance">{{envelope.balance | currency}}</p>
+		<h4>
+			<a href="#/transactions/{{envelope.categoryId}}">{{envelope.category}}</a>
+		</h4>
+	</div>
+</div>

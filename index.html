@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<style>
+table.menu, th, td.menu {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+.box {
+    height:100px;
+    width:200px;
+	background-image: url(images/envelope2.svg);
+    display: inline-block;
+    border-collapse: collapse;
+	cursor: pointer; 
+	cursor: hand;
+}
+.box:hover
+{
+opacity: 0.4;
+}
+h4{
+  text-align: left;
+  padding-left:20px;
+  padding-top:20px;
+}
+p.balance {
+	text-align:center;
+	padding-top:10px;
+}
+</style>
+<head>
+<body ng-app="budgyApp" ng-controller="NavbarCtrl as navbar">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" style="color: #00E600">ıllıllı Buhjit ıllıllı</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li ng-class="{active:navbar.isSelected(1)}">
+					<a href="#/envelopes" ng-click="navbar.selectedTab(1)">
+						<span class="glyphicon glyphicon-envelope" style="color: #00E600"></span> 
+						ENVELOPES
+					</a>
+				</li>
+				<li ng-class="{active:navbar.isSelected(2)}">
+					<a href="#/expenditures" ng-click="navbar.selectedTab(2)">
+						<span class="glyphicon glyphicon-credit-card" style="color: #00E600"></span>
+						EXPENDITURES
+					</a>
+				</li>
+				<li ng-class="{active:navbar.isSelected(3)}">
+					<a href="#/reports" ng-click="navbar.selectedTab(3)">
+						<span class="glyphicon glyphicon-stats" style="color: #00E600"></span> 
+						ANALYSIS
+					</a>
+				</li>
+				<li ng-class="{active:navbar.isSelected(4)}">
+					<a href="#/manageEnvelopes" ng-click="navbar.selectedTab(4)">
+						<span class="glyphicon glyphicon-cog" style="color: #00E600"></span> 
+						CONFIGURE
+					</a>
+				</li>
+				<li ng-class="{active:navbar.isSelected(5)}">
+					<a href="#/" ng-click="navbar.selectedTab(5)">
+						<span class="glyphicon glyphicon-question-sign" style="color: #00E600"></span> 
+						HELP
+					</a>
+				</li>
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#/">
+						<span class="glyphicon glyphicon-user" style="color: #00E600"></span> 
+						Sign Up
+					</a>
+				</li>
+				<li>
+					<a href="#/">
+						<span class="glyphicon glyphicon-log-in" style="color: #00E600"></span> 
+						Logout
+					</a>
+				</li>
+			</ul>
+        </nav>
+<br>
+<center>
+
+<div ng-view=""></div>
+
+</center>
+		
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-cookies.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-messages.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-touch.js"></script>	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+	
+	<script src="modules/core/controllers/app.js"></script>
+	<script src="modules/envelopes/controllers/envelopesController.js"></script>
+</body>
+</html>

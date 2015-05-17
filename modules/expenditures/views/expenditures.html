@@ -1,0 +1,28 @@
+<div class="container" ng-controller='EnvelopesCtrl' ng-init='getEnvelopes()'>
+    <br>
+	<div align="left" style="padding-bottom: 12px; padding-left: 12px;">
+		<a href="" ng-controller='ModalDemoCtrl' ng-click="open()" class="glyphicon glyphicon-plus"> EXPENDITURE</a>
+	</div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr bgcolor="#00E600">
+			<th data-sortable="true">Description</th>
+			<th>Amount</th>
+			<th>Envelope</th>
+			<th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat = "envelope in envelopes" ng-controller='ModalDemoCtrl'>
+            <td>{{expenditure.desc}}</td>
+            <td>{{expenditure.amount}}</td>
+            <td>{{expenditure.envelope}}</td>
+            <td>{{expenditure.date}}</td>
+            <td><a ng-click="open(envelope)" class="glyphicon glyphicon-pencil"></a></td>
+            <td><span class="glyphicon glyphicon-trash"></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

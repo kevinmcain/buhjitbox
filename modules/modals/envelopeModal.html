@@ -1,0 +1,63 @@
+	<!-- https://angular-ui.github.io/bootstrap/ -->
+<style>
+.modal-content{
+	border: 1px solid #00E600;
+}
+.form-control{
+	border: 1px solid #00E600;
+} 
+.center-modal {
+    position: fixed;
+    top: 35%;
+    left: 18.5%;
+    z-index: 1050;
+    width: 80%;
+    height: 80%;
+    margin-left: -10%;
+}
+</style>
+<div class="modal-content" ng-controller="ModalDemoCtrl">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title" ng-show="!envelope._id">Add Envelope</h4>
+		<h4 class="modal-title" ng-show="envelope._id">Edit Envelope</h4>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-md-12">
+								<label>Envelope :</label>
+				<select class="form-control" ng-model="envelope.category">
+					<option> Select Envelope</option>
+					<option selected="selected">Groceries</option>
+					<option>Education</option>
+					<option>Entertainment</option>
+					<option>Gifts/Donations</option>
+					<option>Healthcare/Medical</option>
+					<option>Shopping</option>
+					<option>Savings/Investment</option>
+					<option>Insurance</option>
+					<option>Income</option>
+					<option>Personal Care</option>
+					<option>Housing</option>
+					<option>Taxes</option>
+					<option>Travel</option>
+					<option>Children/Dependent Expenses</option>
+					<option>Bank Activity</option>
+					<option>Automotive Expenses</option>
+					<option>Business</option>
+					<option>Debt</option>
+					<option>Utilities</option>
+					<option>Leisure</option>
+				</select>
+					</div>
+			<div class="col-md-12">
+				<label>Amount ($) :</label>
+				<input type="text" ng-model="envelope.amount" class="form-control">
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+		<button type="button" class="btn btn-primary btn-save" ng-click="ok()">Save changes</button>
+	</div>
+</div>
