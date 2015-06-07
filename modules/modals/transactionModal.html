@@ -1,0 +1,34 @@
+<!-- https://angular-ui.github.io/bootstrap/ -->
+<div ng-controller="ModalDemoCtrlT">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<!--	<h4 class="modal-title" ng-show="!transaction.description">Add Transaction</h4>  -->
+			<!--	<h4 class="modal-title" ng-show="transaction.description">Edit Transaction</h4> -->
+			<h4 class="modal-title" ng-if="!transaction.$$hashKey">Add Transaction</h4>
+			<h4 class="modal-title" ng-if="transaction.$$hashKey">Edit Transaction</h4>		
+		
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-md-12">
+                	<label>Description :</label>
+					<input type="text" ng-model="transaction.description" class="form-control">
+    			</div>
+				<div class="col-md-12">
+					<label>Expense ($) :</label>
+					<input type="text" ng-model="transaction.expense" class="form-control">
+				</div>	
+				<div class="col-md-12">
+					<label>Date :</label>
+					<input type="text"  ng-model="transaction.date" placeholder="MM\DD\YYYY" class="form-control"> 
+				</div> 
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" ng-click="cancel()">Close</button>
+			<button type="button" class="btn btn-primary btn-save" ng-click="ok()">Save changes</button>
+		</div>
+	</div>
+</div>

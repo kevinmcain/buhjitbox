@@ -1,15 +1,14 @@
-'use strict'; // <-- what does this mean?
+'use strict';
 
 /**
  * @ngdoc overview
- * @name buhjit
+ * @name budgy
  * @description
  * # envelope system
  *
  * Main module of the application.
  */
  
-// wrapping your javascript in closure is a good habit
 (function(){
 
 	var app = angular.module('budgyApp', 
@@ -30,44 +29,28 @@
 			controller: 'LoginCtrl'
 		})
 		.when('/envelopes', {
-			templateUrl: 'modules/envelopes/views/budget.html',
-			controller: 'EnvelopesCtrl'
+			templateUrl: 'modules/envelope/views/budget.html',
+			controller: 'EnvelopeCtrl'
 		})
-		.when('/expenditures/', {
-			templateUrl: 'modules/expenditures/views/expenditures.html',
-			controller: 'ExpendituresCtrl'
+		.when('/manageEnvelopes',{
+			templateUrl: 'modules/envelope/views/manageEnvelopes.html',
+			controller: 'EnvelopeCtrl'
+		})
+		.when('/manageTransactions/:envelopeID',{
+			templateUrl: 'modules/expense/views/manageTransactions.html',
+			controller: 'ExpenseCtrl'
 		})
 		.when('/reports/', {
 			templateUrl: 'modules/reports/views/report1.html',
 			controller: 'ReportsCtrl'
-		})
-		.when('/manageEnvelopes',{
-				templateUrl: 'modules/envelopes/views/manageEnvelopes.html',
-				controller: 'EnvelopesCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'
 		});
 	})
 	
-	// controls the behaviour of our navigation bar
-	app.controller('NavbarCtrl', function() {
-		this.tab = 1;
-		
-		this.selectedTab = function(setTab) {
-			this.tab = setTab;
-		};
-		
-		this.isSelected = function(checkTab) {
-			return this.tab === checkTab;
-		};
-	});
-	
-	// specify a controller for setting the budgetId:
-	// we could have a login controller set the budgetId & userId 
-	// in the rootScope. Something like the controller below
 	app.controller('LoginCtrl', ['$rootScope', function($rootScope) {
-		$rootScope.budgetId = 1;
+		$rootScope.budgetId = "556ffe20761b9d2e6e6d701c";
 	}]);
 	
 })();

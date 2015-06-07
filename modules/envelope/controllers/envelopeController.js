@@ -12,7 +12,7 @@
 
 	var app = angular.module('budgyApp');
 
-	app.controller('EnvelopesCtrl', [
+	app.controller('EnvelopeCtrl', [
 		'$scope', 
 		'$rootScope',
 		'$http', 
@@ -27,7 +27,7 @@
 				$http.get(url).success(function(data, status, headers, config) {
 					$scope.envelopes = data;
 				});
-			};
+			};	
 		}
 	]);
   
@@ -42,8 +42,8 @@
 			$scope.error_message = response.error_message;
 		});
 	};
-  
-    var updateEnvelope = function(http, envelope) {
+	
+	var updateEnvelope = function(http, envelope) {
 				
 		var url = '/envelopes/' + envelope._id;
 		
@@ -55,7 +55,8 @@
 				
 		});
 	};
-
+	
+	
 	app.controller('ModalDemoCtrl', function ($scope, $modal, $log, $http) {
 
 		$scope.open = function (_envelope) {
@@ -64,7 +65,6 @@
 
 				templateUrl: '/modules/modals/envelopeModal.html',
 				controller: 'ModalInstanceCtrl',
-				windowClass: 'center-modal',
 				resolve: {
 					envelope: function() {
 						return _envelope;
@@ -88,16 +88,33 @@
 				
 				}, function () {
 					$log.info('Modal dismissed at: ' + new Date());
+					
 				});
 			
-			};
+		};
+		
+		$scope.deleteEnvelope = function(envelope) {
+				
+				var url = '/envelopes/' + envelope._id;
+				$http.delete(url, envelope).success(function(response, status, headers, config){
+					$scope.getEnvelopes();
+					$log.info(envelope);
+				}).error(function(response, status, headers, config){
+					$scope.error_message = response.error_message;		
+				});
+		};	
 	});
 	
 	// Please note that $modalInstance represents a modal window (instance) dependency.
 	// It is not the same as the $modal service used above.
 
 	app.controller('ModalInstanceCtrl', 
-		function ($scope, $modalInstance, envelope) {
+		function ($scope, $modalInstance, envelope, $http) {
+		
+		$http.get('/category').success(function(data, status, headers, config) {
+			$scope.categories = data;
+			$scope.selectedItem = $scope.categories[0];
+		});
 		
 		// deep copy clone
 		$scope.envelope = jQuery.extend(true, {}, envelope);
@@ -111,7 +128,6 @@
 
 		$scope.cancel = function () {
 			$modalInstance.dismiss('cancel');
-							
 		};
 	});
 	

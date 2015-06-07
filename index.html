@@ -12,9 +12,9 @@ th, td {
     padding: 5px;
 }
 .box {
-    height:100px;
-    width:200px;
-	background-image: url(images/envelope2.svg);
+    height:148px;
+    width:227px;
+	background-image: url(images/g.png);
     display: inline-block;
     border-collapse: collapse;
 	cursor: pointer; 
@@ -24,47 +24,72 @@ th, td {
 {
 opacity: 0.4;
 }
-h4{
-  text-align: left;
-  padding-left:20px;
-  padding-top:20px;
+.box2 {
+    height:148px;
+    width:227px;
+	background-image: url(images/y.png);
+    display: inline-block;
+    border-collapse: collapse;
+	cursor: pointer; 
+	cursor: hand;
+}
+.box2:hover
+{
+opacity: 0.4;
+}
+p.cat{
+  text-align: center;
+  padding-top:10px;
+  font-size: 150%;
+  color: #FFFFFF;
+}
+p.amount {
+	text-align:center;
+	margin-top:-9px;
+	font-weight: bold;
+	font-size: 100%;
 }
 p.balance {
 	text-align:center;
-	padding-top:10px;
+	margin-top:20px;
+	font-weight: bold;
+	font-size: 150%;
 }
 </style>
+
 <head>
 <body ng-app="budgyApp" ng-controller="NavbarCtrl as navbar">
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" style="color: #00E600">ıllıllı Buhjit ıllıllı</a>
+			<!--	<a class="navbar-brand" style="color: #00E600">ıllıllı вυ∂gу ıllıllı</a> -->
 			</div>
 
 			<ul class="nav navbar-nav">
 				<li ng-class="{active:navbar.isSelected(1)}">
-					<a href="#/envelopes" ng-click="navbar.selectedTab(1)">
-						<span class="glyphicon glyphicon-envelope" style="color: #00E600"></span> 
-						ENVELOPES
+					<a href="#/envelopes" ng-click="navbar.selectedTab(1)" class="navbar-brand" style="color: #00E600">
+					ıllıllı Buhjit ıllıllı
+					
+				<!--		<span class="glyphicon glyphicon-home" style="color: #00E600"></span> 
+						HOME -->
 					</a>
 				</li>
 				<li ng-class="{active:navbar.isSelected(2)}">
-					<a href="#/expenditures" ng-click="navbar.selectedTab(2)">
-						<span class="glyphicon glyphicon-credit-card" style="color: #00E600"></span>
-						EXPENDITURES
+					<a href="#/manageEnvelopes" ng-click="navbar.selectedTab(2)">
+						<span class="glyphicon glyphicon-envelope" style="color: #00E600"></span>
+						SETUP ENVELOPES
 					</a>
 				</li>
 				<li ng-class="{active:navbar.isSelected(3)}">
-					<a href="#/reports" ng-click="navbar.selectedTab(3)">
-						<span class="glyphicon glyphicon-stats" style="color: #00E600"></span> 
-						ANALYSIS
+					<a href="#/" ng-click="navbar.selectedTab(3)">
+						<span class="glyphicon glyphicon-credit-card" style="color: #00E600"></span> 
+						TRANSACTIONS
 					</a>
 				</li>
 				<li ng-class="{active:navbar.isSelected(4)}">
-					<a href="#/manageEnvelopes" ng-click="navbar.selectedTab(4)">
-						<span class="glyphicon glyphicon-cog" style="color: #00E600"></span> 
-						CONFIGURE
+					<a href="#/reports" ng-click="navbar.selectedTab(4)">
+						<span class="glyphicon glyphicon-stats" style="color: #00E600"></span> 
+						REPORTS
 					</a>
 				</li>
 				<li ng-class="{active:navbar.isSelected(5)}">
@@ -90,7 +115,7 @@ p.balance {
 				</li>
 			</ul>
         </nav>
-<br>
+<br><br>
 <center>
 
 <div ng-view=""></div>
@@ -112,6 +137,8 @@ p.balance {
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
 	
 	<script src="modules/core/controllers/app.js"></script>
-	<script src="modules/envelopes/controllers/envelopesController.js"></script>
+	<script src="modules/core/controllers/navigationController.js"></script>
+	<script src="modules/envelope/controllers/envelopeController.js"></script>
+	<script src="modules/expense/controllers/expenseController.js"></script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<div class="container" ng-controller='EnvelopeCtrl' ng-init='getEnvelopes()'>
+    <br>
+	<div align="right" style="padding-bottom: 12px; padding-left: 12px;"> 
+		<button type="button" class="btn btn-default" aria-label="Add Envelope">
+			<a ng-controller='ModalDemoCtrl' ng-click="open()" class="glyphicon glyphicon-plus" aria-hidden="true"> ENVELOPE</a>
+		</button>
+	</div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr bgcolor="#333333">
+            <th ><font color="#FFFFFF">ENVELOPE</th>
+            <th ><font color="#FFFFFF">AMOUNT ($)</th>
+            <th ><font color="#FFFFFF">SPENT ($)</th>
+            <th ><font color="#FFFFFF">BALANCE ($)</th>
+            <th ><font color="#FFFFFF">Edit</th>
+            <th ><font color="#FFFFFF">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat = "envelope in envelopes" ng-controller='ModalDemoCtrl'>
+            <td>{{envelope.category}}</td>
+            <td>{{envelope.amount|currency }}</td>
+            <td>{{envelope.spent |currency}}</td>
+            <td>{{envelope.balance |currency}}</td>
+            <td><a ng-click="open(envelope)" class="glyphicon glyphicon-pencil"></a></td>
+            <td><a ng-click="deleteEnvelope(envelope)" class="glyphicon glyphicon-trash"></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

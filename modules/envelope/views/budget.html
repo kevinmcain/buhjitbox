@@ -1,0 +1,24 @@
+<div class="container" ng-controller='EnvelopeCtrl' ng-init='getEnvelopes()'>
+	<label ng-repeat="envelope in envelopes| orderBy:'-numberOfTransactions'"">
+	
+		<div ng-if="envelope.percentageSpent < .80">
+			<div class="box" >
+				<a ng-href="#/manageTransactions/{{envelope.category}}" >
+					<p class="cat">{{envelope.category}}</p>
+					<p class="amount">Total: {{envelope.amount | currency}}</p>
+					<p class="balance">Balance: {{envelope.balance | currency}}</p>	
+				</a>
+			</div>
+		</div>
+		
+		<div ng-if="envelope.percentageSpent > .80">
+			<div class="box2"> 
+				<a ng-href="#/manageTransactions/{{envelope.category}}" >
+					<p class="cat">{{envelope.category}}</p>
+					<p class="amount">Total: {{envelope.amount | currency}}</p>
+					<p class="balance">Balance: {{envelope.balance | currency}}</p>
+				</a>
+			</div>			
+		</div>
+	</label>
+</div>

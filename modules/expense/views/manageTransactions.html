@@ -1,0 +1,27 @@
+<div class="container" ng-controller='ExpenseCtrl'  ng-init='getTransactions()' >
+    <h1 class="panel-heading" class="glyphicon glyphicon-add">TRANSACTIONS : {{envelopeID}}</h1>
+    <br><br>
+	<div align="right" style="padding-bottom: 12px; padding-left: 12px;"> 
+		<button type="button" class="btn btn-default" aria-label="Add Transaction">
+		<a ng-controller='ModalDemoCtrlT' ng-click="open()" class="glyphicon glyphicon-plus" aria-hidden="true"> TRANSACTIONS</a> 
+		</button>
+	</div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr bgcolor="#333333">
+			<th ><font color="#FFFFFF">DATE</th>
+			<th ><font color="#FFFFFF">TRANSACTION</th>
+            <th ><font color="#FFFFFF">SPENT ($)</th>
+            <th ><font color="#FFFFFF">Edit</th>
+            <th ><font color="#FFFFFF">Delete</th>
+        </tr>
+        </thead>
+			<tr ng-repeat = "transaction in transactions" ng-controller='ModalDemoCtrlT' >
+				<td>{{transaction.date | date:"MM/dd/yyyy"}} </td>
+				<td>{{transaction.description}}</td>
+				<td>{{transaction.expense}} </td>	
+				<td><a ng-click="open(transaction)" class="glyphicon glyphicon-pencil"></a></td>
+				<td><a ng-click="deleteTransaction(transaction)" class="glyphicon glyphicon-trash"></a></td>			
+			</tr>
+    </table> 
+</div>
